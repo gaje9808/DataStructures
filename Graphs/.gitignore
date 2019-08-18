@@ -1,3 +1,5 @@
 .gradle
-
-.idea
+*.iws
+workspace.xml
+tasks.xml
+.idea/*
