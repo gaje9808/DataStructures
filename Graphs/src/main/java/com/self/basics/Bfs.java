@@ -3,6 +3,7 @@ package com.self.basics;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+// for bfs traversal on graphs
 public class Bfs {
     public static void bfs (Graph g, int i){
         int v = g.vertices;
@@ -26,6 +27,7 @@ public class Bfs {
         }
     }
 
+    // driver class for creating a graph
     public static void main(String[] args){
         Graph g = new Graph(4);
 
