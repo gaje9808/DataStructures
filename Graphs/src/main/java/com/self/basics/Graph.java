@@ -2,7 +2,7 @@ package com.self.basics;
 
 import java.util.LinkedList;
 
-// A normal undirected Graph with v vertices and addEdge method
+// A normal undirected Graph with v vertices and addEdge method to add edges
 public class Graph {
     int vertices;
     LinkedList<Integer> adj[];
