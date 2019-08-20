@@ -2,15 +2,22 @@ package com.self.basics;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 
 // for bfs traversal on graphs
 public class Bfs {
-    public static void bfs (Graph g, int i){
+    public static void bfs (Graph g){
         int v = g.vertices;
-        LinkedList<Integer> q = new LinkedList<>();
-        boolean visited[] = new boolean[v];
+        boolean[] visited = new boolean[v];
+        for (int i=0;i<v;i++)
+            if (!visited[i])
+                bfsUtil(i,visited,g);
+    }
+
+    public static void bfsUtil(int i, boolean[] visited, Graph g) {
+        Queue<Integer> q = new LinkedList<>();
+        visited[i] =true;
         q.add(i);
-        visited[i] = true;
 
         while (!q.isEmpty()) {
             i = q.poll();
@@ -20,11 +27,12 @@ public class Bfs {
             while (it.hasNext()) {
                 int n = it.next();
                 if (!visited[n]) {
-                    q.add(n);
                     visited[n] = true;
+                    q.add(n);
                 }
             }
         }
+
     }
 
     // driver class for creating a graph
@@ -38,6 +46,6 @@ public class Bfs {
         g.addEdge(2, 3);
         g.addEdge(3, 3);
 
-        bfs(g,2);
+        bfs(g);
     }
 }

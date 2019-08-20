@@ -13,7 +13,7 @@ public class DetectCycleInDirectedGraph {
         Arrays.fill(recStack, false);
 
         for (int i=0;i<v;i++) {
-                if (isCyclicUtildfs(i,visited,recStack,g))
+                if (!visited[i] && isCyclicUtildfs(i,visited,recStack,g))
                     return true;
         }
         return false;
@@ -21,7 +21,6 @@ public class DetectCycleInDirectedGraph {
 
     public static boolean isCyclicUtildfs(int i, boolean[] visited, boolean[] recStack, Graph g) {
         if (recStack[i]) return true;
-        if (visited[i]) return false;
 
         visited[i] = true;
         recStack[i] = true;
@@ -38,18 +37,23 @@ public class DetectCycleInDirectedGraph {
     }
 
     public static void main(String args[]) {
-        Graph graph = new Graph(4);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(2, 3);
-        graph.addEdge(3, 3);
-
-        if(isCyclicdfs(graph))
+        Graph g1 = new Graph(5);
+        g1.addEdge(1, 0);
+        g1.addEdge(0, 2);
+        g1.addEdge(2, 0);
+        g1.addEdge(0, 3);
+        g1.addEdge(3, 4);
+        if (isCyclicdfs(g1))
             System.out.println("Graph contains cycle");
         else
-            System.out.println("Graph doesn't "
-                    + "contain cycle");
+            System.out.println("Graph doesn't contains cycle");
+
+        Graph g2 = new Graph(3);
+        g2.addEdge(0, 1);
+        g2.addEdge(1, 2);
+        if (isCyclicdfs(g2))
+            System.out.println("Graph contains cycle");
+        else
+            System.out.println("Graph doesn't contains cycle");
     }
 }
