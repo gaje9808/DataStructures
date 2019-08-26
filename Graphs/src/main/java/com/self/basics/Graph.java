@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 // A normal undirected Graph with v vertices and addEdge method to add edges
 public class Graph {
-    int vertices;
-    LinkedList<Integer> adj[];
+    public int vertices;
+    public LinkedList<Integer> adj[];
 
-    Graph(int v){
+    public Graph(int v){
         vertices = v;
         adj = new LinkedList[v];
 
