@@ -1,5 +1,7 @@
 package com.self.algoAndPuzzles;
 
+
+// Algorith to find min distance between all pair of vertices
 public class FloydsWarshellAlgo {
     public static void floydWarshell (int a[][]){
         int n = a.length;
