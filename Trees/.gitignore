@@ -1,0 +1,6 @@
+.idea/*
+.gradle
+out/
+*.iml
+*.iws
+src/main/java/com/self/revision/*
