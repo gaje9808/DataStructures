@@ -6,3 +6,4 @@ tasks.xml
 *.xml
 out
 .DS_Store
+RedisApi
